@@ -2,7 +2,7 @@
 
 ## 1.Clone repository Github ke komputer Anda
 
-## 2 Install Node.js
+## 2.Install Node.js
 
 ## 3.Jalankan Perintah npm install di direktori Project
 
