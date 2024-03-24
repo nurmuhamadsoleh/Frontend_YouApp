@@ -21,12 +21,8 @@ import { useRouter } from "next/router";
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [statusPage, setStatusPage] = useState(true);
 
   useEffect(() => {
-    function changeStatus() {
-      setStatusPage(navigator.onLine);
-    }
     const handleStart = () => {
       setIsLoading(true);
     };
@@ -39,16 +35,11 @@ export default function App({ Component, pageProps }: AppProps) {
       setIsLoading(false);
     };
 
-    window.addEventListener("online", changeStatus);
-    window.addEventListener("offline", changeStatus);
-
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
     router.events.on("routeChangeError", handleStop);
 
     return () => {
-      window.addEventListener("online", changeStatus);
-      window.addEventListener("offline", changeStatus);
       router.events.off("routeChangeStart", handleStart);
       router.events.off("routeChangeComplete", handleComplete);
       router.events.off("routeChangeError", handleStop);

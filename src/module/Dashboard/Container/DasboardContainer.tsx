@@ -21,12 +21,9 @@ export default function DasboardContainer() {
       setSelected("");
     }
   };
-  console.log("response data", data);
-  console.log("search city", searchCity);
   return (
     <>
       <DashboardComponent
-        selected={selected}
         setSelectedCity={setSelected}
         searchCity={searchCity}
         isLoadingCity={isFetchingDataCity}

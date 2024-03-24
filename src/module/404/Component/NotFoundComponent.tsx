@@ -1,5 +1,5 @@
 import { Button, Result } from "antd";
-import Link from "next/link";
+
 import React from "react";
 
 export default function NotFoundComponent() {

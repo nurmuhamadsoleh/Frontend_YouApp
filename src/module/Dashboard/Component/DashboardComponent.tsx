@@ -10,17 +10,10 @@ interface IProps {
   isLoadingCity: boolean;
   setSelectedCity: React.Dispatch<React.SetStateAction<string>>;
   searchCity: string;
-  selected: string;
 }
 export default function DashboardComponent(props: IProps) {
-  const {
-    handleSearch,
-    City,
-    isLoadingCity,
-    searchCity,
-    setSelectedCity,
-    selected,
-  } = props;
+  const { handleSearch, City, isLoadingCity, searchCity, setSelectedCity } =
+    props;
   const router = useRouter();
   return (
     <div className="flex justify-center items-center mt-8">
