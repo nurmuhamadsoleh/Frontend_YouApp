@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Country</title>
       </Head>
-      <div className="light m-0 p-0 ">
+      <div className="light m-0 p-0 box-border">
         {isLoading && (
           <div className="fixed z-[1000] w-screen h-screen flex justify-center items-center bg-[#8362F2] opacity-100 duration-1000 overflow-hidden">
             <PulseLoader color="white" className="m-auto" size={40} />

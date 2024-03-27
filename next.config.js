@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
 
-module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: ["picsum.photos"], // Menambahkan host ke daftar yang diizinkan
+  },
+};
+
+// module.exports = nextConfig;
