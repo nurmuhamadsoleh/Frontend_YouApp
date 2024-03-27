@@ -1,4 +1,4 @@
-## Instruksiuntuk menjalankan program :
+## Instruksiuntuk menjalankan program Portal Berita:
 
 ## 1.Clone repository Github ke komputer Anda
 
@@ -8,4 +8,4 @@
 
 ## 4.Jalankan perintah npm run dev untukmelakukan running code program atau server development
 
-## 5.Buka Browser Anda dan kunjugi urlberikut ini http://localhost:8080
+## 5.Buka Browser Anda dan kunjugi urlberikut ini http://localhost:8000
