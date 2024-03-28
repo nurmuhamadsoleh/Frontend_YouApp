@@ -1,5 +1,6 @@
 import { DatePicker, Input, Skeleton } from "antd";
 
+import Image from "next/image";
 import React from "react";
 import dayjs from "dayjs";
 
@@ -91,11 +92,19 @@ export default function DashboardComponent(props: IProps) {
                   key={index}
                 >
                   <div className="flex lg:basis-1/5 basis-full hover:cursor-pointer text-white p-3">
-                    <img
+                    {/* <Image
                       src={item?.urlToImage}
                       alt={item.title}
                       width={250}
                       height={120}
+                      className="object-cover mx-auto rounded-md"
+                    /> */}
+                    <Image
+                      src={item?.urlToImage || ""}
+                      alt={item?.title}
+                      width={500} // Nilai width sesuai dengan kebutuhan Anda
+                      height={300} // Nilai height sesuai dengan kebutuhan Anda
+                      layout="responsive"
                       className="object-cover mx-auto rounded-md"
                     />
                   </div>

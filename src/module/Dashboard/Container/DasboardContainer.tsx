@@ -27,7 +27,6 @@ export default function DasboardContainer() {
       sessionStorage.clear();
     }
   };
-  console.log("search berita", searchBerita);
   const {
     data: data,
     isFetching: isFetchingPortalBerita,
@@ -37,7 +36,6 @@ export default function DasboardContainer() {
     ["Get List City", searchBerita, date, month, year],
     GetBeritaAPI
   );
-  console.log("error fetching", errorFetching);
   return (
     <>
       <DashboardComponent

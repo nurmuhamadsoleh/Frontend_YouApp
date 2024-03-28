@@ -1,27 +1,20 @@
 /** @type {import('next').NextConfig} */
-// import { getImageDomains } from "./src/helpers/config";
 const nextConfig = {
+  // experimental: {
+  //   appDir: true,
+  // },
   images: {
-    domains: [
-      "picsum.photos",
-      "nypost.com",
-      "i.insider.com",
-      "wm.observador.pt",
-    ], // Menambahkan host ke daftar yang diizinkan
+    loader: "akamai",
+    path: "",
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
   output: "export",
 };
 
 module.exports = nextConfig;
-// export async function getConfig() {
-//   const domains = await getImageDomains();
-
-//   return {
-//     reactStrictMode: true,
-//     images: {
-//       domains: domains,
-//     },
-//   };
-// }
-
-// export default getConfig();
