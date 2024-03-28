@@ -1,6 +1,5 @@
 import { DatePicker, Input, Skeleton } from "antd";
 
-import Image from "next/image";
 import Logo from "assets/images/loginLogo.png";
 import React from "react";
 import dayjs from "dayjs";
@@ -10,7 +9,6 @@ interface IProps {
   handleSearch: (query: string) => void;
   PortalBerita?: any;
   isLoadingPortalBerita: boolean;
-  setSelectedCity: React.Dispatch<React.SetStateAction<string>>;
   handleCalender: (e: any, vals: any) => void;
   searchCity: string;
   errorFetching: any;
@@ -21,7 +19,6 @@ export default function DashboardComponent(props: IProps) {
     isLoadingPortalBerita,
     PortalBerita,
     searchCity,
-    setSelectedCity,
     handleCalender,
     errorFetching,
   } = props;
@@ -84,28 +81,27 @@ export default function DashboardComponent(props: IProps) {
       <div className=" bg-white mt-28">
         {isLoadingPortalBerita ? (
           <div className="bg-white">
-            {/* Tambahkan loading skeleton di sini */}
             <Skeleton active />
           </div>
         ) : (
           <>
             {searchCity !== "" && PortalBerita?.articles?.length >= 1 ? (
-              // Tambahkan penanganan kondisi di sini
               PortalBerita?.articles?.map((item: any, index: number) => (
                 <div
                   className="flex lg:flex-nowrap md:flex-nowrap md:flex-row flex-wrap w-full"
                   key={index}
                 >
-                  <div className="lg:basis-1/5 basis-full bg-yellow-500 hover:cursor-pointer text-white">
-                    <Image
-                      src={Logo}
-                      alt="Picture of the author"
-                      layout="responsive"
-                      className="object-cover"
+                  <div className="flex lg:basis-1/5 basis-full hover:cursor-pointer text-white p-3">
+                    <img
+                      src={item?.urlToImage}
+                      alt={item.title}
+                      width={250}
+                      height={120}
+                      className="object-cover mx-auto rounded-md"
                     />
                   </div>
                   <div
-                    className="lg:basis-4/5 basis-full bg-red-600 "
+                    className="lg:basis-4/5 md:basis-1/2 basis-full"
                     onClick={() => handleLinkClick(item, index)}
                   >
                     <h4

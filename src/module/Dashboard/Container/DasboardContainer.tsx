@@ -7,7 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function DasboardContainer() {
   const [searchBerita, setSearchBerita] = useState<string>("tesla");
-  const [selected, setSelected] = useState<string>("");
   const [date, setDate] = useState(dayjs().format("DD"));
   const [month, setMonth] = useState(dayjs().format("MM"));
   const [year, setYear] = useState(dayjs().format("YYYY"));
@@ -45,7 +44,6 @@ export default function DasboardContainer() {
         errorFetching={errorFetching}
         handleCalender={handleCalender}
         searchCity={searchBerita}
-        setSelectedCity={setSelected}
         isLoadingPortalBerita={isFetchingPortalBerita}
         PortalBerita={data}
         handleSearch={handleSearch}
