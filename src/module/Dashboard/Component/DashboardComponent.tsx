@@ -1,6 +1,5 @@
 import { DatePicker, Input, Skeleton } from "antd";
 
-import Logo from "assets/images/loginLogo.png";
 import React from "react";
 import dayjs from "dayjs";
 
