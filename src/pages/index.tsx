@@ -1,6 +1,6 @@
-import DasboardContainer from "module/Dashboard/Container/DasboardContainer";
+import LoginContainer from "module/Login/Container/LoginContainer";
 import React from "react";
 
 export default function Index() {
-  return <DasboardContainer />;
+  return <LoginContainer />;
 }

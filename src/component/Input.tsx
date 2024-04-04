@@ -1,7 +1,7 @@
 import { Form, Input as InputANTD, InputNumber, InputProps } from "antd";
 
 import { ChangeEvent } from "react";
-import handleFeedBack from "helper/handleFeedback";
+import handleFeedBack from "helpers/handleFeedback";
 
 interface IInput extends InputProps {
   colon?: boolean;

@@ -15,12 +15,14 @@ import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { PulseLoader } from "react-spinners";
+import Template from "component/Template";
 import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [showChild, setShowChild] = useState(false);
 
   useEffect(() => {
     const handleStart = () => {
@@ -54,7 +56,18 @@ export default function App({ Component, pageProps }: AppProps) {
       },
     },
   });
+  // function Root() {
+  //   const [showChild, setShowChild] = useState(false); //ketika belum login
+  //   useEffect(() => {
+  //     setShowChild(true); //pada saat render pertama kali maka setShowChild true
+  //   }, []);
 
+  //   if (showChild) {
+
+  //   } else {
+  //     return null;
+  //   }
+  // }
   return (
     <QueryClientProvider client={queryClient}>
       <Head>
@@ -66,6 +79,10 @@ export default function App({ Component, pageProps }: AppProps) {
             <PulseLoader color="white" className="m-auto" size={40} />
           </div>
         )}
+        {/* {Root()} */}
+        {/* <Template>
+          
+        </Template> */}
         <Component {...pageProps} />
         <ToastContainer />
       </div>
